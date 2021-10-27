@@ -33,6 +33,10 @@ export const Container = styled.div`
         padding: 5px;
     }
 
+    h3{
+        color: rgba(0, 0, 0, 0.8);
+    }
+
     table{
         border-collapse: collapse;
 
@@ -90,7 +94,7 @@ export const Container = styled.div`
     }
 
     input:checked[type="checkbox"] + .icon{
-        color: #f00;
+        color: rgb(209, 70, 46);
         opacity: 1;
     }
 

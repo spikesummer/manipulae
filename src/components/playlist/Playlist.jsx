@@ -17,6 +17,15 @@ const Playlist = (props) => {
         return ret;
     }
 
+    let favoritos = [];
+
+    function addFavorito(favorito){
+      const add = favorito 
+      favoritos.push(add);
+      console.log(favoritos);
+      
+    }
+
     return(
         <Container>
             <table>
@@ -25,10 +34,9 @@ const Playlist = (props) => {
                     return (
                             <tr key={musica.id} className="tr">
                                 <td><img src={musica.album.cover_small} alt=""></img></td>
-
                                 <td>
                                     <input type="checkbox" id={`favorito${musica.id}`} value={musica.id} />
-                                    <label htmlFor={`favorito${musica.id}`} className="icon" onClick={()=>{ console.log(musica.id)}}>
+                                    <label htmlFor={`favorito${musica.id}`} className="icon" onClick={()=>{ if(document.getElementById(`favorito${musica.id}`).checked)addFavorito({id: musica.id, titulo: musica.title, nomeArtista:musica.artist.name, previewMusica:musica.preview})}}>
                                     <i className="fa fa-heart" aria-hidden="true"></i>
                                     </label>
                                 </td>
